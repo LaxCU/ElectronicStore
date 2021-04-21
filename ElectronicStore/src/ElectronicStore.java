@@ -1,5 +1,6 @@
 //Class representing an electronic store
 //Has an array of products that represent the items the store can sell
+import java.util.ArrayList;
 import java.util.Scanner;
 public class ElectronicStore{
   public final int MAX_PRODUCTS = 10; //Maximum number of products the store can have
@@ -70,5 +71,26 @@ public class ElectronicStore{
     store1.addProduct(t1);
     store1.addProduct(t2);
     return store1;
+  }
+
+  //Returns an arraylist of items in stock
+  public ArrayList<Product> getStock(){
+    ArrayList<Product> sortedStock = new ArrayList<Product>();
+    //Product[] sortedStock = new Product[stock.length];
+    for (Product p: stock){
+      if (p != null)
+        sortedStock.add(p);
+
+    }
+    return sortedStock;
+  }
+
+  //Returns the index of a given product
+  public int getIndex(Product p){
+    for (int i = 0; i<curProducts;i++){
+      if (p == stock[i])
+        return i;
+    }
+    return -1;
   }
 } 

@@ -3,10 +3,12 @@ public class Product{
  private double price;
  private int stockQuantity;
  private int soldQuantity;
+ private int availableQuanity;  //Measures the total available quanitty by accounting items sold & in cart.
  
  public Product(double initPrice, int initQuantity){
    price = initPrice;
    stockQuantity = initQuantity;
+   availableQuanity = initQuantity;
  }
  
  public int getStockQuantity(){
@@ -31,4 +33,18 @@ public class Product{
    }
    return 0.0;
  }
+
+ public int getAvailableQuanity() {
+     return availableQuanity;
+ } //Returns availableQuantity
+
+ public void setAvailableQuanity(boolean b){ //Increases or decreases available quanitty
+     if (b) {
+         availableQuanity++;
+     }
+     else
+         availableQuanity--;
+ }
+
+
 }
